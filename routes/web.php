@@ -29,5 +29,6 @@ Route::prefix('customer')->group(function () {
     Route::get('/', [CustDashboardController::class, 'index']);
     Route::get('/orders', [CustOrdersController::class, 'index']);
     Route::get('/schedule', [CustScheduleController::class, 'index']);
+    Route::post('/schedule/order/process', [CustScheduleController::class, 'orderProcess']);
 });
 

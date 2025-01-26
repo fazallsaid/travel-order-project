@@ -101,4 +101,4 @@
     }
 </script>
 <div class="h-screen flex flex-row flex-wrap">
-  @include('admin.partials.sidebar')
+  @include('customer.partials.sidebar')

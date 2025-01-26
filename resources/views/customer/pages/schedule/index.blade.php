@@ -7,7 +7,7 @@
                 <div class="flex justify-between items-center mb-2">
                     <h2 class="text-lg font-medium">Jadwal {{ $index + 1 }}</h2>
                     <div>
-                        <button onclick="blurBackground(); document.getElementById('orderModal{{$sched->schedule_id}}').showModal()" class="bg-green-500 hover:bg-green-700 text-white font-bold py-1 px-2 rounded mr-2">Pesan Sekarang</button>
+                        <button onclick="blurBackground(); document.getElementById('scheduleOrderModal{{$sched->schedule_id}}').showModal()" class="bg-green-500 hover:bg-green-700 text-white font-bold py-1 px-2 rounded mr-2">Pesan Sekarang</button>
                     </div>
                 </div>
                 <p><strong>Dari:</strong> {{ $sched->from }}</p>

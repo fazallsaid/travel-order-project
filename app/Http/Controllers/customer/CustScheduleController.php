@@ -28,4 +28,16 @@ class CustScheduleController extends Controller
             return view('customer.pages.schedule.index', $data);
         }
     }
+
+    function orderProcess(Request $request){
+        $order = $this->allGetDataController->createOrders($request);
+
+        if($order){
+            toastr()->success('Pemesanan berhasil!');
+            return redirect('/customer/orders');
+        }else{
+            toastr()->error('Pemesanan gagal!');
+            return redirect('/customer/schedule');
+        }
+    }
 }

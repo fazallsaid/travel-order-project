@@ -4,9 +4,9 @@
             Pesan Jadwal {{$sched->from}} - {{$sched->to}}
         </h2>
         <i class="fa fa-close fa-2x absolute top-0 right-0 m-4 cursor-pointer" onclick="unblurBackground(); document.getElementById('scheduleOrderModal{{$sched->schedule_id}}').close()"></i>
-        <form id="orderScheduleForm" action="{{ url('customer/order/process') }}" method="POST">
+        <form id="orderScheduleForm" action="{{ url('customer/schedule/order/process') }}" method="POST">
             @csrf
-            <input type="hidden" name="user_id" value="{{ session('customerid') }}">
+            <input type="hidden" name="user_id" value="{{ $cust->user_id }}">
             <input type="hidden" name="schedule_id" value="{{ $sched->schedule_id }}">
             <div class="mb-4">
                 <label class="text-gray-700">Tanggal Pesan</label>
@@ -14,7 +14,7 @@
             </div>
             <div class="mb-4">
                 <label class="text-gray-700">Jam Pesan</label>
-                <input type="time" name="order_time" class="w-full p-3 border text-gray-700 bg-white border-orange-400 rounded-lg focus:outline-none focus:border-orange-700" required>
+                <input type="time" value="{{$sched->departure_time}}" name="order_time" class="w-full p-3 border text-gray-700 bg-white border-orange-400 rounded-lg focus:outline-none focus:border-orange-700" required readonly>
             </div>
             <input type="hidden" name="status" value="Waiting">
             <button type="submit" class="w-full text-white p-3 mb-4 rounded-lg bg-orange-600 hover:bg-orange-700 transition-colors">

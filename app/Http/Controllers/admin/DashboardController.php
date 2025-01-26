@@ -28,7 +28,7 @@ class DashboardController extends Controller
                 'customer' => $customer,
                 'orders' => $orders,
             ];
-            return view('admin/dashboard', $data);
+            return view('admin.dashboard', $data);
         }else{
             toastr()->error('Anda tidak memiliki akses untuk ke halaman tersebut tanpa login terlebih dahulu.');
             return redirect('/');
