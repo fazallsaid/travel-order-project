@@ -2,7 +2,7 @@
 <div class="bg-gray-100 flex-1 p-6 md:mt-16">
     <div class="mt-1 grid grid-cols-1 gap-6 xl:grid-cols-1 mb-5">
         <!-- update section -->
-    <div class="card bg-orange-500 border-teal-400 shadow-md text-white">
+    <div class="card bg-orange-500 border-orange-700 rounded-xl shadow-md text-white">
         <div class="card-body flex flex-row">
 
             <!-- info -->
@@ -30,7 +30,7 @@
 
                 <!-- bottom -->
                 <div class="mt-8">
-                    <h1 class="h5">0</h1>
+                    <h1 class="h5">{{count($orders)}}</h1>
                     <p>Penjualan Tiket</p>
                 </div>
                 <!-- end bottom -->
@@ -54,7 +54,7 @@
 
                 <!-- bottom -->
                 <div class="mt-8">
-                    <h1 class="h5">0</h1>
+                    <h1 class="h5">{{count($customer)}}</h1>
                     <p>Customer</p>
                 </div>
                 <!-- end bottom -->

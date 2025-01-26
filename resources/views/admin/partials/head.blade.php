@@ -6,6 +6,7 @@
   <link rel="shortcut icon" href="./img/fav.png" type="image/x-icon">
   <link rel="stylesheet" href="https://kit-pro.fontawesome.com/releases/v5.12.1/css/pro.min.css">
   <link rel="stylesheet" type="text/css" href="{{asset('assets/css/style.css')}}">
+  <link rel="stylesheet" href="https://cdn.datatables.net/2.2.1/css/dataTables.tailwindcss.css">
   <title>{{$title}}</title>
 </head>
 <body class="bg-gray-100">
@@ -32,7 +33,7 @@
     <div id="navbar" class="animated md:hidden md:fixed md:top-0 md:w-full md:left-0 md:mt-16 md:border-t md:border-b md:border-gray-200 md:p-10 md:bg-white flex-1 pl-3 flex flex-row flex-wrap justify-between items-center md:flex-col md:items-center">
       <!-- left -->
       <div class="text-gray-600 md:w-full md:flex md:flex-row md:justify-evenly md:pb-10 md:mb-10 md:border-b md:border-gray-200">
-        
+
       </div>
       <!-- end left -->
 
@@ -105,5 +106,30 @@
 
   </div>
 <!-- end navbar -->
+<script>
+    function blurBackground() {
+        document.body.style.filter = "blur(10px)";
+    }
+
+    function blurBackgroundo() {
+        document.body.style.filter = "blur(10px)";
+    }
+
+    function blurBackgroundos() {
+        document.body.style.filter = "blur(10px)";
+    }
+
+    function unblurBackground() {
+        document.body.style.filter = "none";
+    }
+
+    function unblurBackgroundo() {
+        document.body.style.filter = "none";
+    }
+
+    function unblurBackgroundos() {
+        document.body.style.filter = "none";
+    }
+</script>
 <div class="h-screen flex flex-row flex-wrap">
   @include('admin.partials.sidebar')

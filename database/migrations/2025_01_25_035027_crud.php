@@ -26,9 +26,7 @@ return new class extends Migration
             $table->increments('schedule_id');
             $table->string('from');
             $table->string('to');
-            $table->date('departure_date');
             $table->time('departure_time');
-            $table->time('passenger_quota');
             $table->integer('ticket_price');
             $table->timestamps();
         });
@@ -59,6 +57,9 @@ return new class extends Migration
      */
     public function down(): void
     {
-        //
+        Schema::dropIfExists('users');
+        Schema::dropIfExists('schedule');
+        Schema::dropIfExists('orders');
+        Schema::dropIfExists('sessions');
     }
 };

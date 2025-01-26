@@ -9,6 +9,7 @@ class Schedule extends Model
     protected $table = 'schedule';
     protected $primaryKey = 'schedule_id';
     protected $fillable = [
+        'from',
         'to',
         'departure_date',
         'departure_time',
