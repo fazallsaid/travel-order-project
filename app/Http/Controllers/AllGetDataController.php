@@ -33,6 +33,7 @@ class AllGetDataController extends Controller
         ]);
 
         $logIn = Users::where('email', $validatedData['email'])->first();
+        dd($logIn);
 
             if($logIn && Hash::check($validatedData['password'], $logIn->password)){
                 if($logIn->role == "1"){
@@ -48,13 +49,31 @@ class AllGetDataController extends Controller
             }
     }
 
+    function logout(){
+        session()->forget('admin');
+        session()->forget('adminid');
+        session()->forget('customer');
+        session()->forget('customerid');
+        return redirect('/');
+    }
+
     function getAdminByUser($users){
         $admin = Users::where('user_id', $users)->first();
         return $admin;
     }
 
+    function getCustomerByUser($users){
+        $customer = Users::where('user_id', $users)->first();
+        return $customer;
+    }
+
     function getOrders(){
         $orders = Orders::all();
+        return $orders;
+    }
+
+    function getOrdersByUser(){
+        $orders = Orders::where('user_id', session('customerid'))->get();
         return $orders;
     }
 

@@ -1,4 +1,4 @@
-<dialog id="registerModal" class="h-full w-[65%] bg-white p-[5rem] rounded-xl">
+<dialog id="registerModal" class="h-full w-[65%] bg-white p-[5rem] rounded-xl" onkeydown="if (event.key === 'Escape') { unblurBackground(); this.close(); }">
     <div class="w-full p-[2rem] sm:p-[2rem] flex flex-col justify-center relative">
         <i class="fa fa-close fa-2x text-gray-700 absolute top-0 right-0 m-4" onclick="unblurBackgroundo(); document.getElementById('registerModal').close()"></i>
         <h2 class="text-2xl font-bold text-gray-800 mb-2">

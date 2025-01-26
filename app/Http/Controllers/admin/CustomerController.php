@@ -16,10 +16,20 @@ class CustomerController extends Controller
     }
 
     public function index(){
-        $title = "Customer / Andhika Travel";
-        $data = [
-            'title' => $title,
-        ];
-        return view('admin.pages.customer.index', $data);
+        if(session('admin') == true){
+            $title = "Customer / Andhika Travel";
+            $adminid = session('adminid');
+            $admin = $this->allGetDataController->getAdminByUser($adminid);
+            $customer = $this->allGetDataController->getCustomers();
+            $data = [
+                'title' => $title,
+                'customer' => $customer,
+                'adm' => $admin,
+            ];
+            return view('admin.pages.customer.index', $data);
+        }else{
+            toastr()->error('Anda tidak memiliki akses untuk ke halaman tersebut tanpa login terlebih dahulu.');
+            return redirect('/');
+        }
     }
 }
