@@ -25,4 +25,16 @@ class AuthController extends Controller
             return redirect('/');
         }
     }
+
+    function logProcess(Request $request){
+        $login = $this->allGetDataController->login($request);
+
+        if($login->role == "1"){
+            // Redirect to home page with loginModal open
+            return redirect('admin');
+        }else{
+            // Redirect to home page with loginModal open
+            return redirect('customer');
+        }
+    }
 }

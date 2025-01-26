@@ -44,4 +44,9 @@ class AllGetDataController extends Controller
                 return null;
             }
     }
+
+    function getAdmin($users){
+        $admin = Users::where('user_id', $users)->first();
+        return $admin;
+    }
 }
